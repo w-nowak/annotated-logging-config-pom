@@ -6,10 +6,11 @@
 
     <groupId>com.wnowakcraft</groupId>
     <artifactId>annotated-logging-config-pom</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>${annotated-logging.project.version}</version>
     <packaging>pom</packaging>
 
     <properties>
+        <annotated-logging.project.version>1.0.3-SNAPSHOT</annotated-logging.project.version>
         <java.version>11</java.version>
         <maven.compiler.relese>${java.version}</maven.compiler.relese>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -18,7 +19,7 @@
         <aspectj.version>1.9.5</aspectj.version>
         <aspectj.verbose>true</aspectj.verbose>
         <aspectj.showWaveInfo>true</aspectj.showWaveInfo>
-        <annotated-logging.version>${project.version}</annotated-logging.version>
+        <annotated-logging.version>${annotated-logging.project.version}</annotated-logging.version>
         <aspectj-maven-plugin.version>1.14.0</aspectj-maven-plugin.version>
     </properties>
 
