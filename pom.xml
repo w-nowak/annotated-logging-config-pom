@@ -41,7 +41,7 @@
         <aspectj-maven-plugin.aspectj-version>1.9.5</aspectj-maven-plugin.aspectj-version>
         <aspectj-maven-plugin.classes-dir>${project.build.directory}/classes</aspectj-maven-plugin.classes-dir>
         <aspectj-maven-plugin.showWaveInfo>false</aspectj-maven-plugin.showWaveInfo>
-        <aspectj-maven-plugin.verbose>true</aspectj-maven-plugin.verbose>
+        <aspectj-maven-plugin.verbose>false</aspectj-maven-plugin.verbose>
         <aspectj-maven-plugin.version>1.14.0</aspectj-maven-plugin.version>
         <java.version>11</java.version>
         <junit-jupiter.version>5.5.0</junit-jupiter.version>
