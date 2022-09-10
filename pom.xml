@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <name>Annotated-logging parent POM</name>
-    <description>Parent POM which defines default configuration for Annotated-logging aspect wiring</description>
+    <description>Parent POM which defines default configuration for annotated-logging aspect wiring</description>
     <url>https://github.com/w-nowak/annotated-logging-config-pom</url>
     <licenses>
         <license>
