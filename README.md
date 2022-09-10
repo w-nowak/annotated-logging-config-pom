@@ -1,4 +1,4 @@
-# Annotated logging config parent POM
+# Annotated logging config parent POM v1.0.x
 The parent POM which simplifies incorporation annotated-logging library into a project.
 
 ## How to use
