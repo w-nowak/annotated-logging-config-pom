@@ -40,7 +40,6 @@
         <annotated-logging.version>1.0.3</annotated-logging.version>
         <aspectj-maven-plugin.aspectj-version>1.9.5</aspectj-maven-plugin.aspectj-version>
         <aspectj-maven-plugin.classes-dir>${project.build.directory}/classes</aspectj-maven-plugin.classes-dir>
-        <aspectj-maven-plugin.forceAjcCompile>false</aspectj-maven-plugin.forceAjcCompile>
         <aspectj-maven-plugin.showWaveInfo>false</aspectj-maven-plugin.showWaveInfo>
         <aspectj-maven-plugin.verbose>true</aspectj-maven-plugin.verbose>
         <aspectj-maven-plugin.version>1.14.0</aspectj-maven-plugin.version>
@@ -100,19 +99,17 @@
                     <verbose>${aspectj-maven-plugin.verbose}</verbose>
                     <Xlint>ignore</Xlint>
                     <encoding>UTF-8</encoding>
-                    <forceAjcCompile>${aspectj-maven-plugin.forceAjcCompile}</forceAjcCompile>
-                    <!-- necessary to skip weaving aspects from source java files to mitigate
-                    collisions with other bytecode manipulation libraries like Lombok, Micronaut, etc. -->
-                    <sources/>
+                    <forceAjcCompile>true</forceAjcCompile> <!-- needed to be true to do weaving to already compiled classes which wouldn't need to be recompiled otherwise -->
+                    <sources/>                  <!-- configures to wave compile classes instead of source files -->
+                    <weaveDirectories>          <!-- just to avoid clashes with other source code pre-processing tools like Lombok, Micronaut etc. -->
+                        <weaveDirectory>${project.build.directory}/classes</weaveDirectory>
+                    </weaveDirectories>
                     <aspectLibraries>
                         <aspectLibrary>
                             <groupId>io.github.w-nowak.tools</groupId>
                             <artifactId>annotated-logging</artifactId>
                         </aspectLibrary>
                     </aspectLibraries>
-                    <weaveDirectories>
-                        <weaveDirectory>${aspectj-maven-plugin.classes-dir}</weaveDirectory>
-                    </weaveDirectories>
                 </configuration>
                 <executions>
                     <execution>
